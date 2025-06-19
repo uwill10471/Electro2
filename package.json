@@ -1,0 +1,29 @@
+{
+  "name": "ewaste-monorepo",
+  "version": "1.0.0",
+  "description": "E-waste drop initiative fullstack app",
+  "main": "Backend/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "nodemon Backend/index.js",
+    "dev:frontend": "npm run dev --prefix Frontend",
+    "build": "npm install && npm install --prefix Frontend && npm run build --prefix Frontend",
+    "start": "node Backend/index.js",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.10",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.2",
+    "tailwindcss": "^4.1.10",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
+  }
+}
