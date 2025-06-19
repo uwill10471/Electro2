@@ -99,10 +99,10 @@ app.get('/api/events/:id/registrations', async (req, res) => {
   }
 });
 
-app.use(express.static(path.resolve(__dirname, '../frontend/dist')));
+app.use(express.static(path.resolve(__dirname, '../Frontend/dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '../Frontend/dist', 'index.html'));
 });
 app.get('/', (req, res) => {
   res.send('E-Waste Drop Initiative API');
