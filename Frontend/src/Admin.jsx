@@ -17,7 +17,7 @@ const Admin = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/events');
+      const res = await fetch('https://electro2-c4h6.onrender.com/api/events');
       const data = await res.json();
       setEvents(data);
     } catch (err) {
@@ -27,7 +27,7 @@ const Admin = () => {
 
   const fetchRegistrations = async (eventId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/events/${eventId}/registrations`);
+      const res = await fetch(`https://electro2-c4h6.onrender.com/api/events/${eventId}/registrations`);
       const data = await res.json();
       setRegistrations((prev) => ({ ...prev, [eventId]: data }));
     } catch (err) {
@@ -55,7 +55,7 @@ const Admin = () => {
     setError('');
     setSuccess('');
     try {
-      const res = await fetch('http://localhost:5000/api/events', {
+      const res = await fetch('https://electro2-c4h6.onrender.com/api/events', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

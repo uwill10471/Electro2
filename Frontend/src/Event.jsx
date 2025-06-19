@@ -14,7 +14,7 @@ const Event = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/events');
+      const res = await fetch('https://electro2-c4h6.onrender.com/api/events');
       const data = await res.json();
       setEvents(data);
     } catch (err) {
@@ -36,7 +36,7 @@ const Event = () => {
     setError('');
     setSuccess('');
     try {
-      const res = await fetch('http://localhost:5000/api/events', {
+      const res = await fetch('https://electro2-c4h6.onrender.com/api/events', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
