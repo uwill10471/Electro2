@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 const JWT_SECRET = process.env.JWT_SECRET || 'supersecret';
 
 // MongoDB connection
@@ -152,18 +152,14 @@ app.get('/api/events/:id/dropoffs', adminAuth, async (req, res) => {
   res.json(dropoffs);
 });
 
-// --- Admin: Get all users ---
-app.get('/api/admin/users', adminAuth, async (req, res) => {
-  const users = await User.find({}, 'email rewards isAdmin');
-  res.json(users);
-});
-
 // --- Serve React build in production ---
-app.use(express.static(path.resolve(__dirname, '../Frontend/dist')));
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../Frontend/dist', 'index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../../dist')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../dist', 'index.html'));
+  });
+}
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+  console.log(`Server running on http://localhost:${PORT}`);
+}); 

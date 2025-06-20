@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE } from './api';
 
 const Event = () => {
   const [events, setEvents] = useState([]);
@@ -14,7 +15,7 @@ const Event = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await fetch('https://electro2-c4h6.onrender.com/api/events');
+      const res = await fetch(`${API_BASE}/events`);
       const data = await res.json();
       setEvents(data);
     } catch (err) {
@@ -36,7 +37,7 @@ const Event = () => {
     setError('');
     setSuccess('');
     try {
-      const res = await fetch('https://electro2-c4h6.onrender.com/api/events', {
+      const res = await fetch(`${API_BASE}/events`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

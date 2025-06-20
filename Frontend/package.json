@@ -7,7 +7,10 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "vite": "^5.4.7",
-    "@vitejs/plugin-react": "^4.2.1"
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.4.7"
+  },
+  "dependencies": {
+    "ewaste-monorepo": "file:.."
   }
 }
