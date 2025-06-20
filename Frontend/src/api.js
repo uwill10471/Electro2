@@ -1,1 +1,1 @@
-export const API_BASE = 'http://localhost:5000/api'; // Change this to your production URL when deploying 
+export const API_BASE = 'https://electro2-c4h6.onrender.com//api'; // Change this to your production URL when deploying 
