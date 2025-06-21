@@ -97,12 +97,24 @@ const Home = () => {
             {events.map((event) => (
               <div key={event._id} className="bg-white/80 rounded-2xl shadow-2xl border border-blue-200 p-8 flex flex-col gap-4 backdrop-blur-lg hover:shadow-blue-200 transition">
                 <div>
-                  <div className="font-extrabold text-2xl text-blue-700 mb-1">{event.title}</div>
-                  <div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
-                    <span className="inline-block bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">{new Date(event.date).toLocaleDateString()}</span>
-                    <span className="inline-block bg-cyan-100 text-cyan-700 px-2 py-0.5 rounded-full font-medium">{event.location}</span>
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="font-extrabold text-2xl text-blue-700 mb-1">{event.title || 'E-Waste Collection Event'}</div>
+                    <div className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
+                      {event.eventType || 'E-Waste Collection'}
+                    </div>
                   </div>
-                  <div className="text-gray-600 mt-1 italic">{event.description}</div>
+                  <div className="text-gray-700 text-sm mb-2 flex items-center gap-2">
+                    <span className="inline-block bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">
+                      📅 {new Date(event.date).toLocaleDateString()} at {new Date(event.date).toLocaleTimeString()}
+                    </span>
+                    <span className="inline-block bg-cyan-100 text-cyan-700 px-2 py-0.5 rounded-full font-medium">
+                      📍 {event.location}
+                    </span>
+                    <span className="inline-block bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">
+                      👥 {event.capacity || 100} people
+                    </span>
+                  </div>
+                  <div className="text-gray-600 mt-2 italic">{event.description}</div>
                 </div>
                 <div className="mt-2">
                   <h3 className="text-lg font-semibold text-cyan-700 mb-2">Register for this event</h3>

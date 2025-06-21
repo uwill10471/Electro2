@@ -24,9 +24,14 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 const eventSchema = new mongoose.Schema({
+  title: { type: String, required: true },
   date: { type: Date, required: true },
   location: { type: String, required: true },
-  description: String
+  description: String,
+  eventType: { type: String, required: true, enum: ['E-Waste Collection', 'Electronics Repair', 'Awareness Workshop', 'Recycling Drive', 'Community Cleanup'] },
+  capacity: { type: Number, default: 100 },
+  isActive: { type: Boolean, default: true },
+  createdAt: { type: Date, default: Date.now }
 });
 const Event = mongoose.model('Event', eventSchema);
 
@@ -119,8 +124,8 @@ app.get('/api/events', async (req, res) => {
 });
 
 app.post('/api/events', adminAuth, async (req, res) => {
-  const { date, location, description } = req.body;
-  const event = await Event.create({ date, location, description });
+  const { title, date, location, description, eventType, capacity } = req.body;
+  const event = await Event.create({ title, date, location, description, eventType, capacity });
   res.status(201).json(event);
 });
 
