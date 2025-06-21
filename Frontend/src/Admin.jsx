@@ -160,14 +160,14 @@ const Admin = () => {
           <h2 className="text-2xl font-bold mb-6 text-center text-blue-700">{showRegister ? 'Admin Register' : 'Admin Login'}</h2>
           {showRegister ? (
             <form onSubmit={handleAdminRegister} className="flex flex-col gap-4">
-              <input name="email" value={registerForm.email} onChange={handleRegisterChange} placeholder="Admin Email" required className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70" />
-              <input name="password" type="password" value={registerForm.password} onChange={handleRegisterChange} placeholder="Password" required className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70" />
+              <input name="email" value={registerForm.email} onChange={handleRegisterChange} placeholder="Admin Email" required className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70 text-gray-900 placeholder-gray-500" />
+              <input name="password" type="password" value={registerForm.password} onChange={handleRegisterChange} placeholder="Password" required className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70 text-gray-900 placeholder-gray-500" />
               <button type="submit" className="bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 text-white font-bold py-2 rounded-xl shadow-lg hover:from-blue-600 hover:to-purple-600 hover:scale-105 transition-all duration-200">Register as Admin</button>
             </form>
           ) : (
             <form onSubmit={handleAdminLogin} className="flex flex-col gap-4">
-              <input name="email" value={loginForm.email} onChange={handleLoginChange} placeholder="Admin Email" required className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70" />
-              <input name="password" type="password" value={loginForm.password} onChange={handleLoginChange} placeholder="Password" required className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70" />
+              <input name="email" value={loginForm.email} onChange={handleLoginChange} placeholder="Admin Email" required className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70 text-gray-900 placeholder-gray-500" />
+              <input name="password" type="password" value={loginForm.password} onChange={handleLoginChange} placeholder="Password" required className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70 text-gray-900 placeholder-gray-500" />
               <button type="submit" className="bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 text-white font-bold py-2 rounded-xl shadow-lg hover:from-blue-600 hover:to-purple-600 hover:scale-105 transition-all duration-200">Login as Admin</button>
             </form>
           )}
@@ -223,10 +223,10 @@ const Admin = () => {
         ))}
       </ul>
       <form onSubmit={handleCreateEvent} style={{ marginTop: 16, display: 'flex', gap: 8 }}>
-        <input name="date" type="datetime-local" value={eventForm.date} onChange={handleEventFormChange} required />
-        <input name="location" value={eventForm.location} onChange={handleEventFormChange} placeholder="Location" required />
-        <input name="description" value={eventForm.description} onChange={handleEventFormChange} placeholder="Description" />
-        <button type="submit">Create Event</button>
+        <input name="date" type="datetime-local" value={eventForm.date} onChange={handleEventFormChange} required className="border p-2 rounded text-gray-900" />
+        <input name="location" value={eventForm.location} onChange={handleEventFormChange} placeholder="Location" required className="border p-2 rounded text-gray-900 placeholder-gray-500" />
+        <input name="description" value={eventForm.description} onChange={handleEventFormChange} placeholder="Description" className="border p-2 rounded text-gray-900 placeholder-gray-500" />
+        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Create Event</button>
       </form>
       {eventMsg && <p style={{ color: 'green' }}>{eventMsg}</p>}
       <hr />

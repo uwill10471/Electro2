@@ -117,7 +117,7 @@ const Home = () => {
                       placeholder="Electronics you'll drop, comma-separated (e.g., Phone, Charger, TV)"
                       value={form[event._id]?.electronics || ''}
                       onChange={(e) => handleChange(event._id, 'electronics', e.target.value)}
-                      className="w-full border border-cyan-300 focus:outline-none focus:ring-2 focus:ring-blue-400 p-2 rounded-lg bg-white/70"
+                      className="w-full border border-cyan-300 focus:outline-none focus:ring-2 focus:ring-blue-400 p-2 rounded-lg bg-white/70 text-gray-900 placeholder-gray-500"
                       rows="2"
                       required
                     />
@@ -126,7 +126,7 @@ const Home = () => {
                       placeholder="Other items (optional)"
                       value={form[event._id]?.items || ''}
                       onChange={(e) => handleChange(event._id, 'items', e.target.value)}
-                      className="w-full border border-cyan-300 focus:outline-none focus:ring-2 focus:ring-blue-400 p-2 rounded-lg bg-white/70"
+                      className="w-full border border-cyan-300 focus:outline-none focus:ring-2 focus:ring-blue-400 p-2 rounded-lg bg-white/70 text-gray-900 placeholder-gray-500"
                     />
                     <button
                       type="submit"

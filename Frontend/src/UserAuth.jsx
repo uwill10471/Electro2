@@ -49,7 +49,7 @@ const UserAuth = ({ mode }) => {
             value={form.email}
             onChange={handleChange}
             required
-            className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70"
+            className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70 text-gray-900 placeholder-gray-500"
           />
           <input
             name="password"
@@ -58,7 +58,7 @@ const UserAuth = ({ mode }) => {
             value={form.password}
             onChange={handleChange}
             required
-            className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70"
+            className="border border-cyan-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/70 text-gray-900 placeholder-gray-500"
           />
           <button
             type="submit"

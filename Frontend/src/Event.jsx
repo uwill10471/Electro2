@@ -68,7 +68,7 @@ const Event = () => {
           placeholder="Event Title"
           value={form.title}
           onChange={handleChange}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-gray-900 placeholder-gray-500"
           required
         />
         <input
@@ -76,7 +76,7 @@ const Event = () => {
           name="date"
           value={form.date}
           onChange={handleChange}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-gray-900"
           required
         />
         <input
@@ -85,7 +85,7 @@ const Event = () => {
           placeholder="Location"
           value={form.location}
           onChange={handleChange}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-gray-900 placeholder-gray-500"
           required
         />
         <textarea
@@ -93,7 +93,7 @@ const Event = () => {
           placeholder="Description"
           value={form.description}
           onChange={handleChange}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-gray-900 placeholder-gray-500"
           rows="3"
           required
         />
